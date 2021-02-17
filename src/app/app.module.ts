@@ -26,7 +26,7 @@ import { RouterModule } from '@angular/router';
 import { MatTabsModule } from '@angular/material/tabs';
 import { HistoricalStockComponent } from './pages/stocks/historical-stock/historical-stock.component';
 import { RealtimeStockComponent } from './pages/stocks/realtime-stock/realtime-stock.component'
-
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -56,6 +56,7 @@ import { RealtimeStockComponent } from './pages/stocks/realtime-stock/realtime-s
     CommonModule,
     MatButtonModule,
     MatTabsModule,
+    ChartsModule,
     AuthModule.forRoot({
       ...env.auth,
       httpInterceptor: {

@@ -12,7 +12,7 @@ export const environment = {
     redirectUri: window.location.origin,
   },
   httpInterceptor: {
-    allowedList: [`${apiUri.uri}/*`],
+    allowedList: [`${apiUri[0].uri}`],
   },
 };
 

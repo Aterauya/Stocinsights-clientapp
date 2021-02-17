@@ -4,28 +4,32 @@
 <div *ngIf="company">
     <span>
         <div *ngIf="company.logo">
-            <img src={{company.logo}} class="img-fluid float-left" alt="Responsive image">
+            <img src={{company.logo}} class="img-fluid float-left" alt="{{company.name}}'s logo">
+        </div>
+        <div *ngIf="!company.logo">
+            <i class="fas fa-chart-line"></i>
         </div>
         <h1 class="company-name company-title">{{company.name}}</h1>
+        <h3>{{company.exchange}}</h3>
     </span>
     <div class="row shadow-lg p-3 mb-5 bg-body rounded">
         <div class="col-6">
-            <h3>Exchange: {{company.exchange}}</h3>
-            <h3>Website: <a href={{company.url}}>{{company.url}}</a></h3>
-            <h3>Industry: {{company.industryName}}</h3>
-            <h3>Location: {{company.countryName}}</h3>
-            <h3>Ticker: {{company.companySymbol}}</h3>
+            <h3><b>Exchange:</b> </h3>
+            <h3><b>Website:</b> <a href={{company.url}}>{{company.url}}</a></h3>
+            <h3><b>Industry:</b> {{company.industryName}}</h3>
+            <h3><b>Location:</b> {{company.countryName}}</h3>
+            <h3><b>Ticker:</b> {{company.companySymbol}}</h3>
         </div>
         <div class="col-6">
-            <h3>Currency: {{company.currencyName}}</h3>
-            <h3>Outstanding shares: {{company.outstandingShares}}</h3>
-            <h3>Market Cap: {{company.marketCapitalization}}</h3>
-            <h3>IPO: {{company.ipo}}</h3>
+            <h3><b>Currency:</b> {{company.currencyName}}</h3>
+            <h3><b>Outstanding shares:</b> {{company.outstandingShares}}</h3>
+            <h3><b>Market Cap:</b> {{company.marketCapitalization}}</h3>
+            <h3><b>IPO:</b> {{company.ipo}}</h3>
         </div>
     </div>
 
     <mat-tab-group>
-        <mat-tab label="Historical stock"> <app-historical-stock></app-historical-stock> </mat-tab>
+        <mat-tab label="Historical stock"> <app-historical-stock [ticker]=company.companySymbol></app-historical-stock> </mat-tab>
         <mat-tab label="Realtime stock"> <app-realtime-stock></app-realtime-stock></mat-tab>
       </mat-tab-group>
 </div>

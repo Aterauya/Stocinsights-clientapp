@@ -1,4 +1,4 @@
-import { Company } from './pages/companies/company';
+import { Company } from './company';
 
 describe('Company', () => {
   it('should create an instance', () => {
