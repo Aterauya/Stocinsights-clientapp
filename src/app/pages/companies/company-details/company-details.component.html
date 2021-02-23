@@ -29,7 +29,7 @@
     </div>
 
     <mat-tab-group>
-        <mat-tab label="Historical stock"> <app-historical-stock [ticker]=company.companySymbol></app-historical-stock> </mat-tab>
+        <mat-tab label="Historical stock"> <app-historical-stock [ticker]=company.companySymbol [companyName]=company.name></app-historical-stock> </mat-tab>
         <mat-tab label="Realtime stock"> <app-realtime-stock></app-realtime-stock></mat-tab>
       </mat-tab-group>
 </div>
