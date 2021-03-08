@@ -1,0 +1,14 @@
+{
+  "domain": "stockinsights-auth-dev.eu.auth0.com",
+  "clientId": "kMDweNFjEdlDXrBQBAeofwpYVCQF4Hid",
+  "audience": "company-information",
+  "apiUri": [
+  {"uri": "https://test-stockmaster-companies.azurewebsites.net/*", "tokenOptions" : {
+    "audience": "company-information"
+  }},
+  {"uri" :"https://test-stockmaster-historicalstock.azurewebsites.net/*", "tokenOptions" : {
+    "audience" : "company-information"
+  }}
+],  
+  "appUri": "http://localhost:4200"
+}
