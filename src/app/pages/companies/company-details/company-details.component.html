@@ -1,21 +1,26 @@
 <div class="" *ngIf="!company">
     <app-loading></app-loading>
 </div>
-<div *ngIf="company">
-    <span>
+<div *ngIf="company" >
+    <div class="d-flex align-content-center align-items-center my-2">
         <div *ngIf="company.logo">
-            <img src={{company.logo}} class="img-fluid float-left" alt="{{company.name}}'s logo">
+            <img src={{company.logo}} class="img-fluid float-left company-logo" alt="{{company.name}}'s logo">
         </div>
         <div *ngIf="!company.logo">
             <i class="fas fa-chart-line"></i>
         </div>
-        <h1 class="company-name company-title">{{company.name}}</h1>
-        <h3>{{company.exchange}}</h3>
-    </span>
+        <div class="company-title">
+            <div>        
+                <h1 class="company-name my-0">{{company.name}}</h1>
+            </div>
+            <div>        
+                <h3 class="my-0">{{company.exchange}}</h3>
+            </div>
+        </div>
+    </div>
     <div class="row shadow-lg p-3 mb-5 bg-body rounded">
         <div class="col-6">
-            <h3><b>Exchange:</b> </h3>
-            <h3><b>Website:</b> <a href={{company.url}}>{{company.url}}</a></h3>
+            <h3><b>Website:</b> <a href={{company.url}}> {{company.url}}</a></h3>
             <h3><b>Industry:</b> {{company.industryName}}</h3>
             <h3><b>Location:</b> {{company.countryName}}</h3>
             <h3><b>Ticker:</b> {{company.companySymbol}}</h3>

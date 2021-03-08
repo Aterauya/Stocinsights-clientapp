@@ -27,6 +27,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { HistoricalStockComponent } from './pages/stocks/historical-stock/historical-stock.component';
 import { RealtimeStockComponent } from './pages/stocks/realtime-stock/realtime-stock.component'
 import { NgApexchartsModule } from "ng-apexcharts";
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 
 
 @NgModule({
@@ -58,6 +60,7 @@ import { NgApexchartsModule } from "ng-apexcharts";
     MatButtonModule,
     MatTabsModule,
     NgApexchartsModule,
+    MatPaginatorModule,
     AuthModule.forRoot({
       ...env.auth,
       httpInterceptor: {

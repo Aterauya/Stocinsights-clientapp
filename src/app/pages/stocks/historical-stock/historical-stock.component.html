@@ -1,9 +1,12 @@
+<div *ngIf="!graphDataLoaded">
+  <app-loading></app-loading>
+</div>
 <div *ngIf="graphDataLoaded">
   <apx-chart
   [series]="chartOptions.series"
   [chart]="chartOptions.chart"
   [xaxis]="chartOptions.xaxis"
   [yaxis]="chartOptions.yaxis"
-  [title]="chartOptions.title"
-></apx-chart>
+  [title]="chartOptions.title">
+</apx-chart>
 </div>
