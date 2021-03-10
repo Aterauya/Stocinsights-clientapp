@@ -1,4 +1,4 @@
-<div *ngIf="!graphDataLoaded">
+<div *ngIf="!graphDataLoaded && !httpError">
   <app-loading></app-loading>
 </div>
 <div *ngIf="graphDataLoaded">
@@ -9,4 +9,7 @@
   [yaxis]="chartOptions.yaxis"
   [title]="chartOptions.title">
 </apx-chart>
+</div>
+<div *ngIf="httpError">
+  <p>There is no historical stock for this company</p>
 </div>

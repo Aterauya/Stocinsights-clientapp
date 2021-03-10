@@ -31,6 +31,7 @@ export class HistoricalStockComponent implements OnInit {
   historicalStocks: any[] = [];
 
   graphDataLoaded = false;
+  httpError = false;
 
   chartOptions: Partial<ChartOptions>;
 
@@ -42,8 +43,9 @@ export class HistoricalStockComponent implements OnInit {
 
   ngOnInit(): void {
     this.getHistoricalStocks();
-    this.buildChart();
-    console.log(this.graphDataLoaded);
+    if (!this.httpError) {
+      this.buildChart();
+    }
   }
 
   getHistoricalStocks() {
@@ -56,9 +58,15 @@ export class HistoricalStockComponent implements OnInit {
             x: element.closingDateTime, y: [element.openingPrice,
             element.highPrice, element.lowPrice, element.closePrice]
           })
-        });
+        }
+
+
+        );
         this.graphDataLoaded = true;
-      })
+      },
+        error => {
+          this.httpError = true
+        })
   }
 
   buildChart() {
