@@ -9,8 +9,8 @@ export class CompaniesHttpService {
 
   constructor(private http: HttpClient) { }
 
-  getAllCompanies(pageNumber): Observable<any> {
-    return this.http.get(`https://test-stockmaster-companies.azurewebsites.net/api/Companies/GetCompaniesList/${pageNumber}`)
+  getAllCompanies(pageNumber, itemsPerPage): Observable<any> {
+    return this.http.get(`https://test-stockmaster-companies.azurewebsites.net/api/Companies/GetCompaniesList/pageNumber=${pageNumber},itemsPerPage=${itemsPerPage}`)
   }
 
   getCompanyDetails(companyId): Observable<any> {

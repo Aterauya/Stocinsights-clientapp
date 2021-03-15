@@ -16,7 +16,8 @@ export class CompaniesListComponent implements OnInit {
   companies: Company;
   displayedColumns: string[] = ['name', 'ticker', 'currency', 'details']
   currentPage = 0;
-  pageSize = 10;
+  pageSize = 12;
+  pageSizeOptions = [10, 12, 14, 16, 18, 20];
 
   constructor(private companiesService: CompaniesHttpService) { }
 
@@ -26,7 +27,7 @@ export class CompaniesListComponent implements OnInit {
 
   getCompanies(pageNumber) {
     this.companiesService
-      .getAllCompanies(pageNumber)
+      .getAllCompanies(pageNumber, this.pageSize)
       .subscribe(res => {
         console.log(res);
         this.companies = res;
@@ -45,14 +46,14 @@ export class CompaniesListComponent implements OnInit {
   }
 
   pageEvents(event: any) {
-    console.log(event.pageIndex);
-    console.log(event.pageSize);
     if (event.pageIndex > this.currentPage) {
-      // Clicked on next button
       this.getNextPage();
     } else {
-      // Clicked on previous button
       this.getPreviousPage();
+    }
+    if (this.pageSize != event.pageSize) {
+      this.pageSize = event.pageSize;
+      this.getCompanies(event.pageIndex);
     }
   }
 }

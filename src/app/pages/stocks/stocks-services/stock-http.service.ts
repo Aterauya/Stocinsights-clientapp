@@ -14,8 +14,4 @@ export class StockHttpService {
   getHistoricalStock(ticker): Observable<any> {
     return this.http.get(`https://test-stockmaster-historicalstock.azurewebsites.net/api/HistoricalStocks/GetHistoricalStocks/${ticker}`)
   }
-
-  handleError(error) {
-
-  }
 }

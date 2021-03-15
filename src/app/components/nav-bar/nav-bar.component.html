@@ -14,7 +14,6 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div
         class="collapse navbar-collapse"
         id="navbarNav"
@@ -25,7 +24,7 @@
             <a routerLink="/" class="nav-link">Home</a>
           </li>
 
-          <ul class="navbar-nav mr-auto" *ngIf="auth.isAuthenticated$ | async">
+          <ul class="navbar-nav mr-auto">
             <li class="nav-item">
               <a routerLink="companies-list" class="nav-link">Companies</a>
             </li>
